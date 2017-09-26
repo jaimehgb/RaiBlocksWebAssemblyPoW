@@ -93,6 +93,13 @@ There are more docs about the Module API and emscripten itself here <a href="htt
 </p>
 
 <hr/>
+
+<h3>Compatibility</h3>
+<p>
+This implementation has just been tested in Chrome (Windows 64bit), Firefox (Windows 64bit) and Chrome (Android) but should also work in 
+all the <a href="https://developer.mozilla.org/en-US/docs/WebAssembly#Browser_compatibility" target="_blank">devices supporting WASM</a>.
+</p>
+<hr/>
 <h3>Examples</h3>
 <p>
 
