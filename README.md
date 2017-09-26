@@ -72,7 +72,11 @@ var pow = calculatePoW(hash);
 console.log(pow);
 ```
 
-I prefer the second option :D <br/><br/>
+I prefer the second option :D <br/>
+
+What that function does is to try to find a valid PoW in 10,000,000 iterations. If it finds it it will return the result as a hex string. 
+If it does not find it, will return a 64bit hex 0 (<code>0000000000000000</code>). Keep that in mind :P
+<br/><br/>
 <strong>BUT</strong> ... but. You cannot call the function before WebAssembly is loaded and compiled. How do we know when that happens?
 Well, we have:
 ```javascript
