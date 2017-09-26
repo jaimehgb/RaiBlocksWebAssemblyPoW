@@ -19,10 +19,11 @@
             var PoW = Module.cwrap("launchPoW", 'string', ['string']);
             var start = Date.now();
             console.log("Started");
-            var work;
-            while(work = PoW("BD9F737DDECB0A34DFBA0EDF7017ACB0EF0AA04A6F7A73A406191EF80BB290AD") == "0000000000000000")
+            var work = PoW("BD9F737DDECB0A34DFBA0EDF7017ACB0EF0AA04A6F7A73A406191EF80BB290AD");
+            while(work == '0000000000000000')
             {
                 console.log("Not found in 10000000 iterations");
+                var work = PoW("BD9F737DDECB0A34DFBA0EDF7017ACB0EF0AA04A6F7A73A406191EF80BB290AD");
             }
             var end = Date.now();
             

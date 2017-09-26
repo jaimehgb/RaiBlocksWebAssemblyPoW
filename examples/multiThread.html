@@ -15,7 +15,6 @@
         var start = 0;
         var NUM_THREADS = 3;
         var hash = "BD9F737DDECB0A34DFBA0EDF7017ACB0EF0AA04A6F7A73A406191EF80BB290AD";
-        hash = hex_uint8(hash);
         var workers = pow_initiate(NUM_THREADS, '');
         pow_callback(workers, hash, function(){
             start = Date.now();

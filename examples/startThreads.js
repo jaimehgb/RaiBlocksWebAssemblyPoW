@@ -25,7 +25,7 @@ var pow_terminate = function(workers) {
 }
 
 var pow_callback = function(workers, hash, ready, callback) {
-	if ((hash instanceof Uint8Array) && (hash.length == 32) && (typeof callback == 'function')) {
+	if ( (hash.length == 64) && (typeof callback == 'function')) {
 		var threads = workers.length;
 		for (let i = 0; i < threads; i++) {
 			workers[i].onmessage = function(e) {
