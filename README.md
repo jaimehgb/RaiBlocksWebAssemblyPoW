@@ -95,5 +95,10 @@ There are more docs about the Module API and emscripten itself here <a href="htt
 <hr/>
 <h3>Examples</h3>
 <p>
-Just a minute :P
+
+I've made two examples for you to see/use/improve/whatever. They are at the /examples folder.
+One of them uses webworkers to multithread this stuff. The other one is single threaded. 
+<br/>
+Yeah, take a look there :P
+
 </p>

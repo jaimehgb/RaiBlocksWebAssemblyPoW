@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+
+<body>
+    
+        
+    
+    <script src="pow.js"></script>
+    <script src="startThreads.js"></script>
+    <script>
+        var PoW;
+        Module['onRuntimeInitialized'] = function() {
+            
+            // get pow function from wasm
+            var PoW = Module.cwrap("launchPoW", 'string', ['string']);
+            var start = Date.now();
+            console.log("Started");
+            var work;
+            while(work = PoW("BD9F737DDECB0A34DFBA0EDF7017ACB0EF0AA04A6F7A73A406191EF80BB290AD") == "0000000000000000")
+            {
+                console.log("Not found in 10000000 iterations");
+            }
+            var end = Date.now();
+            
+            var time = (end - start) / 1000;
+            console.log("Time spent " + time);
+            console.log(work);
+            
+        }
+        
+        function hex_uint8(hex) {
+        	var length = (hex.length / 2) | 0;
+        	var uint8 = new Uint8Array(length);
+        	for (let i = 0; i < length; i++) uint8[i] = parseInt(hex.substr(i * 2, 2), 16);
+        	return uint8;
+        }
+    </script>
+</body>
+</html>

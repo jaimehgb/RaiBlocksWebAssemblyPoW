@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+
+<body>
+    
+        
+    
+    <script src="pow.js"></script>
+    <script src="startThreads.js"></script>
+    <script>
+        var start = 0;
+        var NUM_THREADS = 3;
+        var hash = "BD9F737DDECB0A34DFBA0EDF7017ACB0EF0AA04A6F7A73A406191EF80BB290AD";
+        hash = hex_uint8(hash);
+        var workers = pow_initiate(NUM_THREADS, '');
+        pow_callback(workers, hash, function(){
+            start = Date.now();
+            console.log("Started");
+        }, function(data){
+            console.log('Done');
+            var end = Date.now();
+            var time = (end - start) / 1000;
+            console.log("Time spent " + time);
+            console.log(data)
+        });
+        
+        function hex_uint8(hex) {
+        	var length = (hex.length / 2) | 0;
+        	var uint8 = new Uint8Array(length);
+        	for (let i = 0; i < length; i++) uint8[i] = parseInt(hex.substr(i * 2, 2), 16);
+        	return uint8;
+        }
+    </script>
+</body>
+</html>
